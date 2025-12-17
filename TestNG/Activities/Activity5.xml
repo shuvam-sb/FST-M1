@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ActivitySuite">
+
+<!--	     1. Run ALL tests -->
+    <test name="Run All Tests">
+        <classes>
+            <class name="activities.Activity1"/>
+            <class name="activities.Activity2"/>
+            <class name="activities.Activity3"/>
+        </classes>
+    </test>
+
+<!--	 2. Run ONLY HeaderTests -->
+    <test name="Header Tests Only">
+        <groups>
+            <run>
+                <include name="HeaderTests"/>
+            </run>
+        </groups>
+        <classes>
+			<class name="activities.Activity5" />
+		</classes>
+    </test>
+
+<!--	 3. Run ONLY ButtonTests -->
+    <test name="Button Tests Only">
+        <groups>
+            <run>
+                <include name="ButtonTests"/>
+            </run>
+        </groups>
+        <classes>
+			<class name="activities.Activity5" />
+		</classes>
+    </test>
+
+<!--	 4. Exclude HeaderTests -->
+    <test name="Exclude Header Tests">
+    <groups>
+        <run>
+            <exclude name="HeaderTests"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="activities.Activity5"/>
+    </classes>
+</test>
+
+</suite>
