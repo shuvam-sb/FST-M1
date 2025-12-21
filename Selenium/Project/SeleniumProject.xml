@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Alchemy Jobs Suite" parallel="false">
+
+    <test name="Activities">
+        <classes>
+            <class name="projects.Activity1"/>
+            <class name="projects.Activity2"/>
+            <class name="projects.Activity3"/>
+            <class name="projects.Activity4"/>
+            <class name="projects.Activity5"/>
+            <class name="projects.Activity6"/>
+            <class name="projects.Activity7"/>
+            <class name="projects.Activity8"/>
+            <class name="projects.Activity9"/>
+        </classes>
+    </test>
+
+</suite>
