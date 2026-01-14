@@ -41,16 +41,17 @@ public class Restassured_Project1 {
 
 	@Test(priority = 2)
 	public void getSSHKey() {
-		Response response = given().spec(requestSpec).pathParam("keyId", responseID) // 👈 pass ID here
+		Response response = given().spec(requestSpec).pathParam("keyId", responseID) 
 				.when().get("/user/keys/{keyId}").then().assertThat().statusCode(200).extract().response();
         Reporter.log("GET /user/keys/{keyId} Response:\n" + response.asPrettyString(), true);
 	}
 
 	@Test(priority = 3)
 	public void deleteSSHKey() {
-		Response response = given().spec(requestSpec).pathParam("keyId", responseID) // 👈 pass ID here
+		Response response = given().spec(requestSpec).pathParam("keyId", responseID) 
 				.when().delete("/user/keys/{keyId}").then().assertThat().statusCode(204).extract().response();
         Reporter.log("DELETE /user/keys/{keyId} Response:\n" + response.asPrettyString(), true);
 	}
 
 }
+
