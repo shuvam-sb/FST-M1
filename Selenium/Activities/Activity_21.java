@@ -1,0 +1,58 @@
+package examples;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Activity_21 {
+	static WebDriver driver;
+ 	static ArrayList<String> newlist = new ArrayList<String>();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  driver = new FirefoxDriver();
+	 	
+	   
+	   	 
+        driver.get("https://training-support.net/webelements/tabs");
+        System.out.println("Page title: " + driver.getTitle());
+        
+       
+        
+        WebElement button1 = driver.findElement(By.xpath("//button[contains(text(),'Open A New Tab')]"));
+        button1.click();
+        
+        driver.switchTo().window(handles_method(1));
+        
+        WebElement button2 = driver.findElement(By.xpath("//button[contains(text(),'Open Another One')]"));
+        button2.click();
+        
+        
+	
+	}
+	    
+        public static String handles_method(int num) {
+        	Set<String> handles = driver.getWindowHandles();
+        	String parentHandle = driver.getWindowHandle();
+        	ArrayList<String> newlist = new ArrayList<String>();
+        	 try {
+				for(String item:handles) {
+				        if(item!=parentHandle) {
+				        	newlist.add(item);
+				        }
+				        System.out.println(item);
+				       
+      }
+			 } catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			 }
+        	 return newlist.get(num);
+        }
+        }
+      
